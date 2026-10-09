@@ -6,7 +6,7 @@ from modelos import Paciente, Cita, Atencion
 from sistema import SistemaSalud
 
 #OBTENEMOS UNA ISNTANCIA LIMPIA DEL SISTEMA PARA CADA PRUEBA
-def obtener_sisteam():
+def obtener_sistema():
     sistema = SistemaSalud.get_instancia()
 
     #LIMPIAMOS LOS REGISTROS ANTERIORES
@@ -18,7 +18,7 @@ def obtener_sisteam():
 
 #COMPROBAMOS QUE SE PUEDA REGISTRAR Y BUSCAR UN PACIENTE
 def test_registrar_paciente():
-    sistema = obtener_sisteam()
+    sistema = obtener_sistema()
 
     paciente = Paciente(
         "12345678",
@@ -44,7 +44,7 @@ def test_dni_invalido():
 
 #COMPROBAMOS QUE NO SE PUEDA REGISTRAR EL MISMO PACIENTE DOS VECES
 def test_no_registrar_paciente_repetido():
-    sistema = obtener_sisteam()
+    sistema = obtener_sistema()
 
     paciente = Paciente(
         "12345678",
@@ -60,7 +60,7 @@ def test_no_registrar_paciente_repetido():
 
 #COMPROBAMOS QUE UNA CITA NECESITE UN PACIENTE EXISTENTE
 def test_no_registrar_cita_sin_paciente():
-    sistema = obtener_sisteam()
+    sistema = obtener_sistema()
 
     cita = Cita(
         "1",
@@ -75,7 +75,7 @@ def test_no_registrar_cita_sin_paciente():
 
 #COMPROBAMOS QUE UNA ATENCION NECESITE UNA CITA EXISTENTE
 def test_no_registrar_atencion_sin_cita():
-    sistema = obtener_sisteam()
+    sistema = obtener_sistema()
 
     atencion = Atencion(
         "1",
