@@ -109,7 +109,7 @@ def consultar_citas(ventana, sistema):
         for cita in citas:
             tk.Label(
                 ventana_citas,
-                text=cita.mostrar_datos()
+                text=str(cita)
             ).pack(pady=5)
     else:
         tk.Label(

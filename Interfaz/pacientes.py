@@ -114,11 +114,11 @@ def buscar_paciente(ventana, sistema):
         if paciente:
             resultado.config(
                 text="Paciente encontrado:\n" +
-                paciente.mostrar_datos()
+                str(paciente)
             )
         else:
             resultado.config(
-                text="No se encontró ningún paciente."
+                text="No se encontró ningún paciente"
             )
 
     #BOTON BUSCAR

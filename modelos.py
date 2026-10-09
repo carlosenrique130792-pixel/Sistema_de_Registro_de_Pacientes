@@ -13,7 +13,7 @@ class Paciente:
         self._telefono = telefono
 
         #MUESTRA LOS DATOS DEL PACIENTE
-    def mostrar_datos(self):
+    def __str__(self):
         return f"{self._id} - {self._nombre} - {self._edad} - {self._telefono}"
 
 class Cita:
@@ -26,7 +26,7 @@ class Cita:
         self._motivo = motivo
 
         #MUESTRA LOS DATOS DE LA CITA
-    def mostrar_datos(self):
+    def __str__(self):
         return (
             f"Cita {self._id} - DNI: {self._paciente_id} - "
             f"{self._fecha} - {self._hora} - {self._motivo}"
@@ -41,7 +41,7 @@ class Atencion:
         self._observaciones = observaciones
 
         #MUESTRA LOS DATOS DE LA ATENCION
-    def mostrar_datos(self):
+    def __str__(self):
         return (
             f"Atención {self._id} - Cita: {self._cita_id} - "
             f"{self._diagnostico} - {self._observaciones}"
